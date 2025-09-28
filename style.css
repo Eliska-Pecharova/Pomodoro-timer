@@ -1,0 +1,97 @@
+/*GENERAL*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #edf2f7;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*TITLE*/
+.main-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+}
+
+/*MAIN*/
+.container {
+  padding: 2.5rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.8);
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  color: #ffffff;
+  transition: background 0.5s ease;
+}
+
+/* the green part of a tomato */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(45deg);
+  transition: background 0.5s ease;
+}
+
+/* the green part of a tomato in work time */
+.container.work-mode::before {
+  background: radial-gradient(circle at center, #4caf50, #2e7d32);
+}
+
+/* the green part of a tomato in break time */
+.container.break-mode::before {
+  background: radial-gradient(circle at center, #1b5e20, #0d3c13);
+}
+
+.timer h2 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+#mode {
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#time {
+  font-size: 90px;
+  color: black;
+}
+
+/*BUTTONS*/
+.controls button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.controls button .break-mode::before {
+  background: #0d3c13;
+}
